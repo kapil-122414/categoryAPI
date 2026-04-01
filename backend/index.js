@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 connectdb();
 const cors = require("cors");
 app.use(cors());
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.use('/api',routes);
 app.use("/uploads", express.static("uploads"));
    
@@ -17,4 +17,6 @@ app.get("/api", (req, res) => {
   console.log("hyy");
 });
 
-app.listen(port, console.log(`server run ${port}`));
+app.listen(port, () => {
+  console.log(`Server running on ${port}`);
+});
