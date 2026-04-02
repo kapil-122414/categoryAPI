@@ -3,6 +3,7 @@ const { Schema, model } = require("mongoose");
 const categoryschema = new Schema({
   Img: {
     type: String,
+    require: true,
   },
   Categoryname: {
     type: String,
